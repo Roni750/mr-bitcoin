@@ -1,0 +1,124 @@
+// Font Sizes
+.fs-12 {
+	font-size: rem(12px);
+}
+
+.fs-14 {
+	font-size: rem(14px);
+}
+
+.fs-18 {
+	font-size: rem(18px);
+}
+
+.fs-20 {
+	font-size: rem(20px);
+}
+
+.fs-24 {
+	font-size: rem(24px);
+}
+
+.fs-28 {
+	font-size: rem(28px);
+}
+
+.fs-30 {
+	font-size: rem(30px);
+}
+.fs-50 {
+	font-size: rem(50px);
+}
+
+.fs-75 {
+	font-size: rem(75px);
+}
+
+.clean-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+// flex helpers
+
+.flex {
+	display: flex;
+
+	>*.full {
+		flex: 1;
+	}
+
+	&.column {
+		flex-direction: column;
+	}
+
+	&.justify-center {
+		justify-content: center;
+	}
+
+	&.justify-end {
+		justify-content: flex-end;
+	}
+
+	&.space-between {
+		justify-content: space-between;
+	}
+
+	&.space-evenly {
+		justify-content: space-evenly;
+	}
+
+	&.space-around {
+		justify-content: space-around;
+	}
+
+	&.align-center {
+		align-items: center;
+	}
+
+	&.stretch {
+		align-items: stretch;
+	}
+
+	&.wrap {
+		flex-wrap: wrap;
+	}
+
+	&.gap-half {
+		gap: 0.5em;
+	}
+
+	&.gap-1 {
+		gap: 1em;
+	}
+
+	&.gap-3 {
+		gap: 3em;
+	}
+}
+
+// Div helpers
+.w-100 {
+	width: 100%;
+}
+
+.p-half-em {
+	padding: 0.5em;
+}
+
+.p-1em {
+	padding: 1em;
+}
+
+.p-16 {
+	padding: rem(16px);
+}
+
+.pi-10 {
+	padding-inline: 10px;
+}
+
+.mbe-1 {
+	margin-block-end: 1em;
+}

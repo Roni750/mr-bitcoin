@@ -1,0 +1,14 @@
+<script>
+export default {
+    props: {
+        contact: { type: Object, required: true },
+    }
+}
+</script>
+
+<template>
+    <article class="contact-preview">
+        <h2>{{contact.name}}</h2>
+        <h3>{{contact.phone}}</h3>
+    </article>
+</template>

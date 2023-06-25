@@ -1,0 +1,62 @@
+@mixin btn-get-started() {
+    all: unset;
+    cursor: pointer;
+    width: fit-content;
+    background-image: linear-gradient(to right, #1D976C 0%, $clr1 51%, #1D976C 100%);
+    transition: 0.5s;
+    background-size: 200% auto;
+    padding: 1em;
+    padding-inline: 1.5em;
+    color: black;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-weight: 600;
+
+    &:hover {
+        background-position: right center;
+    }
+}
+
+@mixin btn-primary() {}
+
+@mixin logo() {
+    grid-column: 1;
+    padding-inline-start: 1em;
+
+    span {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: rgb(216, 216, 216);
+            width: 5px;
+            height: 1px;
+            top: 2px;
+            left: -6px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: rgb(216, 216, 216);
+            width: 1px;
+            height: 5px;
+            top: 2px;
+            left: -6px;
+        }
+    }
+}
+
+// @mixin btn-board-default($fontSize: 1em, $padding: 0px) {
+//     min-width: max-content;
+//     color: $clr0;
+//     background-color: $bg-clr1;
+//     cursor: pointer;
+//     border: none;
+//     padding: $padding;
+
+//     &:hover {
+//         background-color: $bg-clr1-darker;
+//     }
+// }
