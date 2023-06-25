@@ -4,7 +4,7 @@
         <h2>{{contact.email}}</h2>
         <h3>{{contact.phone}}</h3>
         <RouterLink to="/contact">
-            <button>Back</button>
+            <button class="btn-primary">Back</button>
         </RouterLink>
     </article>
 </template>
@@ -28,5 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+    .contact-details {
+        color: whitesmoke;
+    }
 </style>

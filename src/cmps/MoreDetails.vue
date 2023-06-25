@@ -36,6 +36,8 @@ export default {
     display: flex;
     gap: 2em;
     flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
 
     @media (min-width: $extra-wide-breakpoint) {
         flex-direction: row;

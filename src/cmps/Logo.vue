@@ -1,6 +1,8 @@
 <template>
     <div class="logo flex align-center">
-        <span>mr:bitcoin</span>
+        <RouterLink to="/">
+            <span>mr:bitcoin</span>
+        </RouterLink>
     </div>
 </template>
 

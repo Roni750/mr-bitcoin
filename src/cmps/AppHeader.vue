@@ -26,51 +26,51 @@
 import Logo from '../cmps/Logo.vue'
 
 export default {
-    methods: {
-        handleMouseOver(event) {
-            console.log("event.target.value", event.target.value)
-            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            let iteration = 0
-            let interval = null
-            clearInterval(interval)
-        }
-    },
+    // methods: {
+    //     handleMouseOver(event) {
+    //         console.log("event.target.value", event.target.value)
+    //         const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    //         let iteration = 0
+    //         let interval = null
+    //         clearInterval(interval)
+    //     }
+    // },
 
-    mounted() {
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    // mounted() {
+    //     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-        let interval = null
+    //     let interval = null
 
-        const elements = document.querySelectorAll(".nav-txt")
+    //     const elements = document.querySelectorAll(".nav-txt")
 
-        elements.forEach(element => {
-            element.onmouseover = event => {
-                let iteration = 0
+    //     elements.forEach(element => {
+    //         element.onmouseover = event => {
+    //             let iteration = 0
 
-                clearInterval(interval)
-                console.log("event.target", event.target)
-                interval = setInterval(() => {
-                    event.target.innerText = event.target.innerText
-                        .split("")
-                        .map((letter, index) => {
-                            if (index < iteration) {
-                                return event.target.dataset.value[index]
-                            }
+    //             clearInterval(interval)
+    //             console.log("event.target", event.target)
+    //             interval = setInterval(() => {
+    //                 event.target.innerText = event.target.innerText
+    //                     .split("")
+    //                     .map((letter, index) => {
+    //                         if (index < iteration) {
+    //                             return event.target.dataset.value[index]
+    //                         }
 
-                            return letters[Math.floor(Math.random() * 26)]
-                        })
-                        .join("")
+    //                         return letters[Math.floor(Math.random() * 26)]
+    //                     })
+    //                     .join("")
 
-                    if (iteration >= event.target.dataset.value.length) {
-                        // console.log("event.target.dataset", event.target.dataset.value.length)
-                        clearInterval(interval)
-                    }
+    //                 if (iteration >= event.target.dataset.value.length) {
+    //                     // console.log("event.target.dataset", event.target.dataset.value.length)
+    //                     clearInterval(interval)
+    //                 }
 
-                    iteration += 1 / 3
-                }, 30)
-            }
-        })
-    },
+    //                 iteration += 1 / 3
+    //             }, 30)
+    //         }
+    //     })
+    // },
     components: {
         Logo
     }

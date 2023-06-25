@@ -6,6 +6,8 @@
             <input v-model.phone="contact.phone" placeholder="Phone number" type="text">
             <button>Save</button>
         </div>
+        <div class="glow"></div>
+        <!-- <img src="../../public/—Pngtree—realistic bitcoin coin logo 3d_6168535.png" /> -->
     </form>
 </template>
 
@@ -38,6 +40,7 @@ export default {
 
 <style lang="scss">
 .contact-edit {
+    margin: 0 auto;
     justify-content: center;
     align-items: start;
     background: rgba(61, 61, 61, 0.3);
@@ -46,6 +49,42 @@ export default {
     height: 200px;
     width: 400px;
     margin-inline: 0 auto;
+    position: relative;
+
+    .glow {
+        position: absolute;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        box-shadow:
+            inset 0 0 50px #fff,
+            /* inner white */
+            inset 20px 0 80px #26d592,
+            /* inner left magenta short */
+            inset -20px 0 80px #129971,
+            /* inner right cyan short */
+            inset 20px 0 300px #26d592,
+            /* inner left magenta broad */
+            inset -20px 0 300px #129971,
+            /* inner right cyan broad */
+            0 0 50px #fff,
+            /* outer white */
+            -10px 0 80px #26d592,
+            /* outer left magenta */
+            10px 0 80px #129971;
+        /* outer right cyan */
+
+        $clr1: #26d592;
+$clr2: #129971;
+$clr3: #ea603f;
+    }
+
+    img {
+        width: 100px;
+        position: absolute;
+        right: 0;
+    }
 
     .form-wrapper {
         margin-inline-start: 2em;
@@ -60,5 +99,4 @@ export default {
         // cursor: text;
         color: whitesmoke;
     }
-}
-</style>
+}</style>

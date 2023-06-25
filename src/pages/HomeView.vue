@@ -2,13 +2,6 @@
     <main>
         <div class="home-view flex column gap-3">
             <Hero />
-            <h1>Home</h1>
-            <h3>Current exchange rate: {{ info.exchangeRate }}</h3>
-            <article class="user-card flex column">
-                <h4 v-if="info.user">Welcome aboard {{ info.user[0].name }}!</h4>
-                <span>Balance: {{ info.user[0].balance }} BTC</span>
-                <span v-if="info.user.balance">Transactions history: {{ info.user[0].transactions }}</span>
-            </article>
             <MoreDetails />
             <MainFeatures />
             <Membership />

@@ -44,7 +44,6 @@ export default {
 .main-features-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-flow: row;
 }
 
 .main-features-header {
@@ -53,6 +52,7 @@ export default {
     font-family: sans-serif;
     grid-row: 1;
     grid-column: 1 / -1;
+    margin-block-end: 2em;
 
     .main-features-title {
         display: flex;

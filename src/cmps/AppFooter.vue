@@ -3,9 +3,8 @@
         <Logo />
         <div class="network-links">
             <ul class="clean-list flex row gap-1">
-                <li><font-awesome-icon icon="fa-brands fa-instagram-square" /></li>
-                <li><font-awesome-icon icon="fa-brands fa-github" /></li>
-                <li><font-awesome-icon icon="fa-brands fa-linkedin" /></li>
+                <a href="https://github.com/Roni750/mr-bitcoin"><li><font-awesome-icon icon="fa-brands fa-github" /></li></a>
+                <a href="https://www.linkedin.com/in/%E2%80%AAroni-yerushalmi-2184b0227/"><li><font-awesome-icon icon="fa-brands fa-linkedin" /></li></a>
             </ul>
         </div>
     </footer>

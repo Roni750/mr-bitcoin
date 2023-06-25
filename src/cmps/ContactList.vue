@@ -57,11 +57,6 @@ export default {
     --card-color: rgba(23, 23, 23);
 }
 
-.actions {
-    display: flex;
-    gap: 1em;
-}
-
 .btn-primary {
     display: flex;
     align-content: center;
@@ -84,12 +79,13 @@ export default {
 }
 
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    width: calc(100% - 20px);
-    justify-content: space-between;
-    row-gap: 1.5em;
+    // width: calc(100% - 20px);
+    row-gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(320px), 1fr));
+    grid-auto-flow: dense;
+    column-gap: 1.5em;
+    justify-items: center;
 
     &:hover {
         .card {
@@ -101,8 +97,8 @@ export default {
 }
 
 .card {
-    height: 200px;
-    width: 320px;
+    height: rem(200px);
+    width: rem(320px);
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     cursor: pointer;
@@ -118,9 +114,16 @@ export default {
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        padding: 2em;
+        justify-content: space-between;
+        padding: 1em;
         color: whitesmoke;
+        border: 1px solid rgba($color: white, $alpha: 0.3);
+
+        .actions {
+            display: flex;
+            gap: 1em;
+            align-self: end;
+        }
     }
 
     .card-border {
