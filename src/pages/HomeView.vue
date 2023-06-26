@@ -2,7 +2,7 @@
     <main>
         <div class="home-view flex column gap-3">
             <Hero />
-            <TransactionList v-if="this.info.user.transactions" :transactions="info.user && info.user.transactions" :homepage="true"/>
+            <TransactionList v-if="info.user && info.user.transactions" :transactions="info.user.transactions" :homepage="true"/>
             <MoreDetails />
             <MainFeatures />
             <Membership />
