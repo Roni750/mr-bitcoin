@@ -105,12 +105,12 @@ export default {
     position: relative;
 
     .card-content {
-        background-color: var(--card-color);
+        // background-color: var(--card-color);
         border-radius: inherit;
         margin: 1px;
         height: calc(100% - 2px);
         width: calc(100% - 2px);
-        z-index: 2;
+        z-index: 3;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -123,6 +123,7 @@ export default {
             display: flex;
             gap: 1em;
             align-self: end;
+            z-index: 200;
         }
     }
 
@@ -137,7 +138,7 @@ export default {
         background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
                 rgba(255, 255, 255, 0.06),
                 transparent 40%);
-        z-index: 3;
+        z-index: 2;
     }
 }
 

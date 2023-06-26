@@ -10,14 +10,34 @@
             <span>Easily buy and sell cryptocurrency with our user-friendly app. Start accepting payments and earn money
                 today!</span> -->
             <button class="btn-get-started">Try Mr.bitcoin ►</button>
+            <h3>Current <span>1 USD</span> rate to <span>BTC:</span> <span>{{ info.exchangeRate }}</span></h3>
         </div>
         <img src="../assets/images/hero.png" />
     </div>
 </template>
 
 <script>
-export default {
+import { bitcoinService } from '../services/bitcoin.service'
+import { userService } from '../services/user.service'
 
+export default {
+    data() {
+        return {
+            info: {
+                exchangeRate: null,
+                user: null
+            }
+        }
+    },
+
+    async created() {
+        try {
+            this.info.exchangeRate = await bitcoinService.getRate()
+            this.info.user = await userService.query()
+        } catch (err) {
+            throw err
+        }
+    },
 }
 </script>
 

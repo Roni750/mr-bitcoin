@@ -53,7 +53,7 @@ export default {
 <style lang="scss">
 .stats-container {
     background: rgba($color: #313131, $alpha: .2);
-    padding: 2em;
+    padding-block: 2em;
     border: 1px solid rgba($color: #fff, $alpha: 0.2);
     // width: 100%;
     min-width: fit-content;
@@ -64,8 +64,8 @@ export default {
 
     .buttons {
         background: rgba($color: #000000, $alpha: 0.9);
-        padding: .2em;
-        border-radius: 10px;
+        padding: .1em;
+        border-radius: 15px;
         display: flex;
         flex-direction: row;
         justify-self: end;

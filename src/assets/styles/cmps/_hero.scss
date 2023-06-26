@@ -20,6 +20,11 @@
         }
     }
 
+    h3 {
+        span {
+            color: $clr1;
+        }
+    }
 
     @media (min-width: $mobile-breakpoint) {
         justify-content: space-evenly;
