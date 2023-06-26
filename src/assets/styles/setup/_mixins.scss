@@ -73,3 +73,129 @@
         }
     }
 }
+
+@mixin contact-details {
+    color: whitesmoke;
+    margin: 0 auto;
+    padding: 2.5em;
+    gap: .5em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    justify-content: space-between;
+
+    img {
+        &:first-of-type {
+            filter: blur(5px);
+        }
+
+        height: 60px;
+        opacity: 0.4;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    .phone {
+        svg {
+            height: 15px;
+            color: $icon-clr;
+        }
+    }
+
+    svg {
+        height: 80px;
+    }
+
+    .input-container {
+        background-color: #0e0e0e;
+        position: relative;
+        border-radius: 30px;
+        padding: 3px 50px 3px 10px;
+        border: 1px solid black;
+    }
+
+    .input-box {
+        background-color: transparent;
+        outline: none;
+        height: 35px;
+        font-size: 15px;
+        border: 0;
+        color: rgb(184, 184, 184);
+    }
+
+    input {
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &::placeholder {
+            transition: .3s;
+        }
+
+        &:focus::placeholder {
+            opacity: 0;
+        }
+    }
+
+    .btn-primary {
+        align-self: end;
+        justify-self: end;
+    }
+
+    a {
+        width: fit-content;
+    }
+}
+
+@mixin contact-input {
+    background-color: transparent;
+    outline: none;
+    padding-inline-start: 1em;
+    height: 35px;
+    font-size: 15px;
+    border: 0;
+    color: rgb(184, 184, 184);
+    border: 1px solid rgba($color: #000000, $alpha: .6);
+    border-radius: 15px;
+
+    input {
+        &::placeholder {
+            transition: .3s;
+        }
+
+        &:focus::placeholder {
+            opacity: 0;
+        }
+    }
+}
+
+// Mixins for apply-btn inside an input
+@mixin apply-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $clr2;
+    border-radius: 30px;
+    border: 0;
+    color: #FFF;
+    width: 75px;
+    height: 100%;
+    outline: 0;
+    transition: color .3s, background-color .3s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $clr1;
+        color: black;
+    }
+}

@@ -19,18 +19,18 @@
                 </span>
             </nav>
         </div>
-        <div class="user-header-section flex row align-center gap-1">
+        <div v-if="this.user" class="user-header-section flex row align-center gap-half">
             <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
                 Hello {{ this.user.username }}
             </span>
             <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
-                <RouterLink to="/" @click="onLogout">
-                    <font-awesome-icon icon="fa-solid fa-sign-out" />
+                <RouterLink :to="`/user/${user._id}`">
+                    <font-awesome-icon class="header-icon" icon="fa-solid fa-user" />
                 </RouterLink>
             </span>
             <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
-                <RouterLink :to="`/user/${user._id}`">
-                    <font-awesome-icon icon="fa-solid fa-user" />
+                <RouterLink to="/" @click="onLogout">
+                    <font-awesome-icon class="header-icon" icon="fa-solid fa-sign-out" />
                 </RouterLink>
             </span>
         </div>
@@ -107,4 +107,11 @@ export default {
 
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.header-icon {
+    background: gray;
+    color: black;
+    padding: .2em;
+    border-radius: 5px;
+}
+</style>

@@ -3,6 +3,7 @@
         <div class="emblem-and-name flex row align-center gap-1">
             <div class="img">
                 <img src="../../public/logo.png" />
+                <img src="../../public/logo.png" />
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
                 x="0px" y="0px" viewBox="0 0 122.88 122.88" style="enable-background:new 0 0 122.88 122.88"
@@ -20,8 +21,10 @@
             <span>{{ contact.phone }}</span>
         </div>
         <div class="transfer-container">
-            <input v-model="amount" type="number" placeholder="Please enter amount to transfer">
-            <button @click="onTransfer" class="btn">Transfer</button>
+            <div class="input-container">
+                <input v-model="amount" type="number" class="input-box" placeholder="Enter amount to transfer">
+                <button @click="onTransfer" class="apply-btn">Transfer</button>
+            </div>
         </div>
         <RouterLink to="/contact">
             <button class="btn-primary">Back</button>
@@ -77,11 +80,13 @@ export default {
 .contact-details {
     color: whitesmoke;
     margin: 0 auto;
-    padding: 1em;
+    padding: 2.5em;
+    gap: .5em;
     display: flex;
+    gap: 1em;
     flex-direction: column;
-    height: rem(220px);
-    width: rem(360px);
+    height: fit-content;
+    width: fit-content;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     cursor: pointer;
@@ -89,11 +94,15 @@ export default {
     justify-content: space-between;
 
     img {
-        height: 80px;
-        opacity: 0.6;
+        &:first-of-type {
+            filter: blur(5px);
+        }
+
+        height: 60px;
+        opacity: 0.4;
         position: absolute;
         right: 15px;
-        bottom: 15px;
+        top: 15px;
     }
 
     .phone {
@@ -107,15 +116,46 @@ export default {
         height: 80px;
     }
 
+    .input-container {
+        background-color: #0e0e0e;
+        position: relative;
+        border-radius: 30px;
+        padding: 3px 50px 3px 10px;
+        border: 1px solid black;
+    }
+
+    .input-box {
+        background-color: transparent;
+        outline: none;
+        height: 35px;
+        font-size: 15px;
+        border: 0;
+        color: rgb(184, 184, 184);
+    }
+
+    input {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &::placeholder {
+            transition: .3s;
+        }
+
+        &:focus::placeholder {
+            opacity: 0;
+        }
+    }
+
     .btn-primary {
         align-self: end;
         justify-self: end;
     }
 
-    .flex {
-        span {
-            align-self: center;
-        }
+    a {
+        width: fit-content;
     }
 }
 </style>

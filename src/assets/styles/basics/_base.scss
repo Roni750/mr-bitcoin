@@ -71,6 +71,18 @@ a {
   @include nav-btn-unactive;
 }
 
+.apply-btn {
+  @include apply-btn;
+}
+
+.contact-details {
+  @include contact-details;
+}
+
+.contact-input {
+  @include contact-input;
+}
+
 // @media screen and (min-width: $mobile-breakpoint) {
 // 	:root {
 // 		--options-size: 22px;
