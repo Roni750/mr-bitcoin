@@ -1,19 +1,25 @@
 <template>
     <div class="stats-container flex align-center">
-        <div class="buttons">
+        <!-- <div class="buttons">
             <button class="btn-primary" :class="{ active: isMarketPriceActive, unactive: !isMarketPriceActive }"
                 @click="toggleMarketPrice">Price history</button>
             <button class="btn-primary" :class="{ active: isAvgBlockSizeActive, unactive: !isAvgBlockSizeActive }"
                 @click="toggleAvgBlockSize">Avg block size</button>
-        </div>
-        <div v-if="isMarketPriceActive" class="barchart-wrapper">
+        </div> -->
+        <nav>
+            <RouterLink to="/stats/marketpricehistory"><button class="btn-primary">Price history</button>
+            </RouterLink> |
+            <RouterLink to="/stats/avgblocksize"><button class="btn-primary">Avg block size</button>
+            </RouterLink>
+        </nav>
+        <!-- <div v-if="isMarketPriceActive" class="barchart-wrapper">
             <h1>Market price history since 1/23/23:</h1>
             <BarChart :func="getMarketPriceHistory" />
         </div>
         <div v-if="isAvgBlockSizeActive" class="barchart-wrapper">
             <h1>Average block size changes since 1/23/23:</h1>
             <BarChart :func="getAvgBlockSize" />
-        </div>
+        </div> -->
     </div>
 </template>
   

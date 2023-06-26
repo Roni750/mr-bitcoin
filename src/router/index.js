@@ -4,6 +4,9 @@ import ContactIndex from '../pages/ContactIndex.vue'
 import ContactDetails from '../pages/ContactDetails.vue'
 import ContactEdit from '../pages/ContactEdit.vue'
 import BitcoinStats from '../pages/BitcoinStats.vue'
+import AvgBlockSize from '../pages/stats/AvgBlockSize.vue'
+import MarketPriceHistory from '../pages/stats/MarketPriceHistory.vue'
+
 const routerOptions = {
     history: createWebHashHistory(import.meta.env.BASE_URL),
     routes: [
@@ -21,6 +24,16 @@ const routerOptions = {
             path: '/stats',
             name: 'stats',
             component: BitcoinStats,
+            children: [
+                {
+                    path: '/marketpricehistory',
+                    component: MarketPriceHistory,
+                },
+                {
+                    path: 'avgblocksize',
+                    component: AvgBlockSize,
+                }
+            ]
         },
         {
             path: '/contact/:id',
