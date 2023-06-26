@@ -30,7 +30,7 @@ export default {
         async removeContact(contactId) {
             try {
                 this.$store.dispatch({ type: 'removeContact', contactId })
-                showSuccessMsg('contact removed')
+                showSuccessMsg('Contact removed')
             } catch (err) {
                 showErrorMsg('Cannot remove contact')
             }
@@ -42,7 +42,6 @@ export default {
     computed: {
         filteredContacts() {
             const regex = new RegExp(this.filterBy.txt, 'i')
-            console.log("this.contacts", this.contacts)
             return this.contacts.filter(contact => regex.test(contact.name))
         },
         contacts() { return this.$store.getters.contacts }

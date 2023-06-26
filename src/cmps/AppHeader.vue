@@ -6,7 +6,7 @@
         <div className="main-layout">
             <nav class="navbar flex gap-1">
                 <span class="nav-txt" data-value="Home" @mouseover="handleMouseOver">
-                    <RouterLink to="/">Home</RouterLink>
+                    <RouterLink to="/home">Home</RouterLink>
                 </span>
                 <span class="nav-txt" data-value="About" @mouseover="handleMouseOver">
                     <RouterLink to="/about">About</RouterLink>
@@ -19,13 +19,42 @@
                 </span>
             </nav>
         </div>
+        <div class="user-header-section flex row align-center gap-1">
+            <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
+                Hello {{ this.user.username }}
+            </span>
+            <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
+                <RouterLink to="/" @click="onLogout">
+                    <font-awesome-icon icon="fa-solid fa-sign-out" />
+                </RouterLink>
+            </span>
+            <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
+                <RouterLink :to="`/user/${user._id}`">
+                    <font-awesome-icon icon="fa-solid fa-user" />
+                </RouterLink>
+            </span>
+        </div>
     </header>
 </template>
 
 <script>
 import Logo from '../cmps/Logo.vue'
+import { userService } from '../services/user.service.js';
 
 export default {
+    data() {
+        return {
+            user: null
+        }
+    },
+    created() {
+        this.user = userService.getLoggedinUser()
+    },
+    methods: {
+        async onLogout() {
+            await userService.logout()
+        }
+    },
     // methods: {
     //     handleMouseOver(event) {
     //         console.log("event.target.value", event.target.value)

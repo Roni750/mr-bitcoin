@@ -33,7 +33,7 @@ export default {
     async created() {
         try {
             this.info.exchangeRate = await bitcoinService.getRate()
-            this.info.user = await userService.query()
+            this.info.user = await userService.getLoggedinUser()
         } catch (err) {
             throw err
         }

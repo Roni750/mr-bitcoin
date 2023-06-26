@@ -19,26 +19,53 @@
             <font-awesome-icon icon="fa-solid fa-phone" />
             <span>{{ contact.phone }}</span>
         </div>
+        <div class="transfer-container">
+            <input v-model="amount" type="number" placeholder="Please enter amount to transfer">
+            <button @click="onTransfer" class="btn">Transfer</button>
+        </div>
         <RouterLink to="/contact">
             <button class="btn-primary">Back</button>
         </RouterLink>
     </article>
+    <UserMsg />
 </template>
 
 <script>
 import { contactService } from '@/services/contact.service.js'
+import { userService } from '../services/user.service.js'
+import { showSuccessMsg, showErrorMsg } from '../services/eventBus.service'
+import UserMsg from '../cmps/UserMsg.vue'
 
 export default {
     data() {
         return {
             contact: null,
+            amount: null
+        }
+    },
+    methods: {
+        async onTransfer() {
+            const transaction = {
+                amount: this.amount,
+                at: Date.now(),
+                to: this.contact.name,
+                toId: this.contact._id
+            }
+            try {
+                userService.transferBitcoin(transaction)
+                showSuccessMsg(`${this.amount}₿ Has been transferred successfully`)
+
+            } catch (err) {
+                showErrorMsg('Insufficient balance')
+            }
         }
     },
     async created() {
         const contactId = this.$route.params.id
-        console.log("contactId", contactId)
         this.contact = await contactService.get(contactId)
-        console.log("contact", this.contact)
+    },
+    components: {
+        UserMsg
     }
 }
 </script>

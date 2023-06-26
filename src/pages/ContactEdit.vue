@@ -7,7 +7,6 @@
             <button class="btn-primary">Save</button>
         </div>
         <div class="box"></div>
-        <!-- <img src="../../public/—Pngtree—realistic bitcoin coin logo 3d_6168535.png" /> -->
     </form>
 </template>
 

@@ -10,6 +10,7 @@ function createEventEmitter(defaultHandler = null) {
             return () => listenersMap[evName] = listenersMap[evName].filter(func => func !== listener)
         },
         emit(evName, payload) {
+            console.log("evName, payload", evName, payload)
             if (listenersMap[evName]) listenersMap[evName].forEach(listener => listener(payload))
             else if (defaultHandler) defaultHandler()
         }
