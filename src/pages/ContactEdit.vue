@@ -6,7 +6,6 @@
             <input v-model.phone="contact.phone" class="contact-input" placeholder="Phone number" type="text">
             <button class="btn-primary">Save</button>
         </div>
-        <div class="box"></div>
     </form>
 </template>
 <!-- <template>
@@ -60,29 +59,6 @@ export default {
     width: 400px;
     margin-inline: 0 auto;
     position: relative;
-
-    .box {
-        position: relative;
-        height: 40px;
-        width: 40px;
-        right: -30px;
-
-        &::after {
-            position: absolute;
-            content: "";
-            left: 0;
-            right: 0;
-            z-index: -1;
-            height: 100%;
-            width: 100%;
-            transform: scale(0.9) translateZ(0);
-            filter: blur(15px);
-            background: linear-gradient(to left, #ff5770, #e4428d, #c42da8, #9e16c3, #6501de, #9e16c3, #c42da8, #e4428d, #ff5770);
-            background-size: 200% 200%;
-            animation: animateGlow 1.25s linear infinite;
-        }
-    }
-
 
     @keyframes animateGlow {
         0% {

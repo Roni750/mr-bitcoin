@@ -1,5 +1,5 @@
 <template>
-    <article v-if="contact" class="contact-details">
+    <article v-if="contact" class="contact-details m-0">
         <div class="emblem-and-name flex row align-center gap-1">
             <div class="img">
                 <img src="../../public/logo.png" />
@@ -78,21 +78,6 @@ export default {
 @import '../assets/styles/setup/variables';
 
 .contact-details {
-    color: whitesmoke;
-    margin: 0 auto;
-    padding: 2.5em;
-    gap: .5em;
-    display: flex;
-    gap: 1em;
-    flex-direction: column;
-    height: fit-content;
-    width: fit-content;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-    justify-content: space-between;
-
     img {
         &:first-of-type {
             filter: blur(5px);
