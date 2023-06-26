@@ -2,7 +2,7 @@
     <main>
         <div class="home-view flex column gap-3">
             <Hero />
-            <TransactionList :transactions="info.user && info.user.transactions" :homepage="true"/>
+            <TransactionList v-if="this.info.user.transactions" :transactions="info.user && info.user.transactions" :homepage="true"/>
             <MoreDetails />
             <MainFeatures />
             <Membership />
@@ -35,6 +35,7 @@ export default {
         try {
             this.info.exchangeRate = await bitcoinService.getRate()
             this.info.user = await userService.getLoggedinUser()
+            console.log("this.info.user", this.info.user)
         } catch (err) {
             throw err
         }

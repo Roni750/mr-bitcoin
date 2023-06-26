@@ -5,32 +5,29 @@
         <Logo />
         <div className="main-layout">
             <nav class="navbar flex gap-1">
-                <span class="nav-txt" data-value="Home" @mouseover="handleMouseOver">
+                <span class="nav-txt" data-value="Home">
                     <RouterLink to="/home">Home</RouterLink>
                 </span>
-                <span class="nav-txt" data-value="About" @mouseover="handleMouseOver">
-                    <RouterLink to="/about">About</RouterLink>
-                </span>
-                <span class="nav-txt" data-value="Stats" @mouseover="handleMouseOver">
+                <span class="nav-txt" data-value="Stats">
                     <RouterLink to="/stats">Stats</RouterLink>
                 </span>
-                <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
+                <span class="nav-txt" data-value="Contacts">
                     <RouterLink to="/contact">Contacts</RouterLink>
                 </span>
             </nav>
         </div>
-        <div v-if="this.user" class="user-header-section flex row align-center gap-half">
-            <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
+        <div v-if="this.user" class="user-header-section flex row justify-center align-center gap-half">
+            <span class="nav-txt">
                 Hello {{ this.user.username }}
             </span>
-            <!-- <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
+            <!-- <span class="nav-txt" data-value="Contacts">
                 <RouterLink :to="`/user/${user._id}`">
                     <font-awesome-icon class="header-icon" icon="fa-solid fa-user" />
                 </RouterLink>
             </span> -->
-            <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
+            <span class="nav-txt" data-value="Contacts">
                 <RouterLink to="/" @click="onLogout">
-                    <font-awesome-icon class="header-icon" icon="fa-solid fa-sign-out" />
+                    <font-awesome-icon class="header-icon flex justify-center" icon="fa-solid fa-sign-out" />
                 </RouterLink>
             </span>
         </div>
@@ -108,8 +105,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../assets/styles/setup/variables';
 .header-icon {
-    background: gray;
+    background: rgb(66, 66, 66);
     color: black;
     padding: .2em;
     border-radius: 5px;

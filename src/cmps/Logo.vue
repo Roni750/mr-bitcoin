@@ -16,12 +16,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/styles/setup/_typography';
-
-.logo {
-    font-family: 'Orbit';
-}
-
 img {
     height: 30px;
 }
