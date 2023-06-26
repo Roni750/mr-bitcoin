@@ -30,6 +30,7 @@ export default {
 
 <style lang="scss">
 .login-page {
+    margin: 0 auto;
     padding: 1em;
     cursor: default;
 

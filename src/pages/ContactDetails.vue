@@ -26,9 +26,13 @@
                 <button @click="onTransfer" class="apply-btn">Transfer</button>
             </div>
         </div>
+        <h3>Last transactions:</h3>
+        <TransactionList v-if="contact.transactions" :homepage="false" :transactions="contact.transactions" />
+
         <RouterLink to="/contact">
             <button class="btn-primary">Back</button>
         </RouterLink>
+
     </article>
     <UserMsg />
 </template>
@@ -38,6 +42,8 @@ import { contactService } from '@/services/contact.service.js'
 import { userService } from '../services/user.service.js'
 import { showSuccessMsg, showErrorMsg } from '../services/eventBus.service'
 import UserMsg from '../cmps/UserMsg.vue'
+import { utilService } from '../services/util.service'
+import TransactionList from '../cmps/TransactionList.vue'
 
 export default {
     data() {
@@ -52,7 +58,8 @@ export default {
                 amount: this.amount,
                 at: Date.now(),
                 to: this.contact.name,
-                toId: this.contact._id
+                toId: this.contact._id,
+                fee: utilService.getRandomFloat(0.5, 3)
             }
             try {
                 userService.transferBitcoin(transaction)
@@ -68,7 +75,9 @@ export default {
         this.contact = await contactService.get(contactId)
     },
     components: {
-        UserMsg
+        UserMsg,
+        TransactionList
+
     }
 }
 </script>
@@ -119,6 +128,7 @@ export default {
     }
 
     input {
+
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
             -webkit-appearance: none;

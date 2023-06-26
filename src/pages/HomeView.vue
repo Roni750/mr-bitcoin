@@ -2,12 +2,14 @@
     <main>
         <div class="home-view flex column gap-3">
             <Hero />
+            <TransactionList :transactions="info.user && info.user.transactions" :homepage="true"/>
             <MoreDetails />
             <MainFeatures />
             <Membership />
         </div>
     </main>
 </template>
+  
 
 <script>
 
@@ -17,6 +19,7 @@ import MoreDetails from '../cmps/MoreDetails.vue'
 import Membership from '../cmps/Membership.vue'
 import { bitcoinService } from '../services/bitcoin.service'
 import { userService } from '../services/user.service'
+import TransactionList from '../cmps/TransactionList.vue'
 
 export default {
     data() {
@@ -41,7 +44,8 @@ export default {
         Hero,
         MoreDetails,
         MainFeatures,
-        Membership
+        Membership,
+        TransactionList
     }
 }
 

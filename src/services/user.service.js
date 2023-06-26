@@ -1,5 +1,6 @@
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
+import { contactService } from './contact.service.js'
 
 const STORAGE_KEY = 'usersDB'
 const STORAGE_KEY_LOGGEDIN = 'loggedinUser'
@@ -68,12 +69,21 @@ function _setLoggedinUser({ _id, username, balance, transactions }) {
     return userToSave
 }
 
+async function addToContactBalance(transaction) {
+    const contact = await contactService.get(transaction.toId)
+    console.log("contact", contact)
+    transaction.from = getLoggedinUser().username
+    contact.transactions.unshift(transaction)
+    contactService.save(contact)
+}
+
 function transferBitcoin(transaction) {
     try {
         const user = getLoggedinUser()
-        if (user.balance < transaction.amount) throw new Error("Insufficient balance")
-        user.balance -= transaction.amount
-        user.transactions.push(transaction)
+        if (user.balance < transaction.amount && transaction.fee) throw new Error("Insufficient balance")
+        user.balance -= transaction.amount && transaction.fee
+        user.transactions.unshift(transaction)
+        addToContactBalance(transaction)
         _setLoggedinUser(user)
         save(user)
     } catch (err) {

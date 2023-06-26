@@ -52,6 +52,7 @@ export default {
 
 <style lang="scss">
 @import '../assets/styles/setup/functions';
+@import '../assets/styles/setup/variables';
 
 :root {
     --card-color: rgba(23, 23, 23);
@@ -106,8 +107,14 @@ export default {
         .actions {
             display: flex;
             gap: 1em;
-            align-self: end;
+            align-self: start;
             z-index: 200;
+
+            button {
+                &:hover {
+                    background: $clr1;
+                }
+            }
         }
     }
 

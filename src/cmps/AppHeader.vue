@@ -23,11 +23,11 @@
             <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
                 Hello {{ this.user.username }}
             </span>
-            <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
+            <!-- <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
                 <RouterLink :to="`/user/${user._id}`">
                     <font-awesome-icon class="header-icon" icon="fa-solid fa-user" />
                 </RouterLink>
-            </span>
+            </span> -->
             <span class="nav-txt" data-value="Contacts" @mouseover="handleMouseOver">
                 <RouterLink to="/" @click="onLogout">
                     <font-awesome-icon class="header-icon" icon="fa-solid fa-sign-out" />
