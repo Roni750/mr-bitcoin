@@ -119,8 +119,11 @@ export default {
     }
 
     &::before {
+        // background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+        //         rgba(255, 255, 255, 0.06),
+        //         transparent 40%);
         background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
-                rgba(255, 255, 255, 0.06),
+                rgba(0, 255, 85, 0.06),
                 transparent 40%);
         z-index: 2;
     }
@@ -129,7 +132,7 @@ export default {
 .card::before,
 .card>.card-border {
     background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, 0.06),
+            rgba(19, 233, 144, 0.06),
             transparent 40%);
     border-radius: inherit;
     content: "";

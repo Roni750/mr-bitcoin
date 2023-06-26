@@ -6,7 +6,7 @@
             <input v-model.phone="contact.phone" placeholder="Phone number" type="text">
             <button class="btn-primary">Save</button>
         </div>
-        <div class="glow"></div>
+        <div class="box"></div>
         <!-- <img src="../../public/—Pngtree—realistic bitcoin coin logo 3d_6168535.png" /> -->
     </form>
 </template>
@@ -51,33 +51,37 @@ export default {
     margin-inline: 0 auto;
     position: relative;
 
-    .glow {
-        position: absolute;
-        right: 0;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        box-shadow:
-            inset 0 0 50px #fff,
-            /* inner white */
-            inset 20px 0 80px #26d592,
-            /* inner left magenta short */
-            inset -20px 0 80px #129971,
-            /* inner right cyan short */
-            inset 20px 0 300px #26d592,
-            /* inner left magenta broad */
-            inset -20px 0 300px #129971,
-            /* inner right cyan broad */
-            0 0 50px #fff,
-            /* outer white */
-            -10px 0 80px #26d592,
-            /* outer left magenta */
-            10px 0 80px #129971;
-        /* outer right cyan */
+    .box {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    right: -30px;
 
-        $clr1: #26d592;
-$clr2: #129971;
-$clr3: #ea603f;
+    &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        transform: scale(0.9) translateZ(0);
+        filter: blur(15px);
+        background: linear-gradient(to left, #ff5770, #e4428d, #c42da8, #9e16c3, #6501de, #9e16c3, #c42da8, #e4428d, #ff5770);
+        background-size: 200% 200%;
+        animation: animateGlow 1.25s linear infinite;
+    }
+}
+
+
+    @keyframes animateGlow {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        100% {
+            background-position: 200% 50%;
+        }
     }
 
     img {
@@ -85,6 +89,7 @@ $clr3: #ea603f;
         position: absolute;
         right: 0;
     }
+
 
     .form-wrapper {
         margin-inline-start: 2em;
@@ -104,4 +109,5 @@ $clr3: #ea603f;
     button {
         width: fit-content;
     }
-}</style>
+}
+</style>

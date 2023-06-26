@@ -45,7 +45,11 @@ export default {
     border: 1px solid rgba($color: #000000, $alpha: .5);
     border-radius: 15px;
     padding: .5em;
-
+    width: 400px;
+    bottom: 15px;
+    position: absolute;
+    right: 15px;
+    z-index: 100;
 }
 
 .success {
