@@ -31,6 +31,8 @@ export default {
 
 <style lang="scss">
 @import '../assets/styles/setup/variables';
+@import '../assets/styles/setup/functions';
+
 .info-cards {
     margin: 0 auto;
     display: flex;
@@ -39,6 +41,15 @@ export default {
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
+
+    @media (min-width: $mobile-breakpoint) {
+        flex-direction: row;
+
+        .info-card {
+            width: rem(300px);
+            font-size: 16px;
+        }
+    }
 
     @media (min-width: $extra-wide-breakpoint) {
         flex-direction: row;
@@ -55,10 +66,28 @@ export default {
         background: -webkit-linear-gradient(0deg, rgba(7, 7, 7, 1) 0%, rgba(18, 18, 18, 1) 100%);
         background: linear-gradient(0deg, rgba(7, 7, 7, 1) 0%, rgba(18, 18, 18, 1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#070707", endColorstr="#121212", GradientType=1);
-        width: 300px;
+        width: rem(300px);
+        font-size: rem(16px);
+        // width: 250px;
+        // font-size: rem(14px);
         height: 150px;
         padding-inline: 2em;
-        // border-block-start: 2px solid rgba(255, 255, 255, .2);
+
+        @media (min-width: $narrow-breakpoint) {
+            width: rem(220px);
+            font-size: 12px;
+            height: 140px;
+        }
+
+        @media (min-width: $normal-breakpoint) {
+            width: rem(260px);
+            font-size: 14px;
+        }
+
+        @media (min-width: $extra-wide-breakpoint) {
+            width: rem(300px);
+            font-size: 16px;
+        }
 
         &::after {
             content: "";
