@@ -3,7 +3,7 @@ import HomeView from '../pages/HomeView.vue'
 import ContactIndex from '../pages/ContactIndex.vue'
 import ContactDetails from '../pages/ContactDetails.vue'
 import ContactEdit from '../pages/ContactEdit.vue'
-import BitcoinStats from '../pages/BitcoinStats.vue'
+import Stats from '../pages/Stats.vue'
 import AvgBlockSize from '../pages/stats/AvgBlockSize.vue'
 import MarketPriceHistory from '../pages/stats/MarketPriceHistory.vue'
 
@@ -23,10 +23,10 @@ const routerOptions = {
         {
             path: '/stats',
             name: 'stats',
-            component: BitcoinStats,
+            component: Stats,
             children: [
                 {
-                    path: '/marketpricehistory',
+                    path: 'marketpricehistory',
                     component: MarketPriceHistory,
                 },
                 {

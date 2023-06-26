@@ -67,6 +67,10 @@ a {
   @include btn-primary;
 }
 
+.nav-btn-unactive {
+  @include nav-btn-unactive;
+}
+
 // @media screen and (min-width: $mobile-breakpoint) {
 // 	:root {
 // 		--options-size: 22px;

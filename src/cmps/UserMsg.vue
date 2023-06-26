@@ -37,12 +37,39 @@ export default {
     },
 }
 </script>
-
 <style lang="scss">
-/* we will explain what these classes do next! */
+@import '../assets/styles/setup/variables';
+
 .user-msg {
     transform-origin: right;
+    border: 1px solid rgba($color: #000000, $alpha: .5);
+    border-radius: 15px;
+    padding: .5em;
+
 }
+
+.success {
+    background: $clr1;
+    -webkit-box-shadow: 0px 0px 55px 0px rgba(38, 213, 146, 0.34);
+    -moz-box-shadow: 0px 0px 55px 0px rgba(38, 213, 146, 0.34);
+    box-shadow: 0px 0px 55px 0px rgba(38, 213, 146, 0.34);
+
+    p {
+        color: black;
+    }
+}
+
+.fail {
+    background: rgb(211, 43, 43);
+    -webkit-box-shadow: 0px 0px 550px rgba(211, 43, 43, 034);
+    -moz-box-shadow: 0px 0px 55px rgba(211, 43, 43, 0.34);
+    box-shadow: 0px 0px 55px rgba(211, 43, 43, 0.34);
+
+    p {
+        color: whitesmoke;
+    }
+}
+
 .v-enter-active,
 .v-leave-active {
     transition: 0.8s ease;

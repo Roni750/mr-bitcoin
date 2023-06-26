@@ -22,8 +22,8 @@ export const contactService = {
     setFilterBy,
 }
 
-function query() {
-    return storageService.query(STORAGE_KEY)
+async function query() {
+    return await storageService.query(STORAGE_KEY)
     // .then(contacts => {
     //     if (gFilterBy.txt) {
     //         const regex = new RegExp(gFilterBy.txt, 'i')
