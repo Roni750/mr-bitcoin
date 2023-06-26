@@ -4,7 +4,7 @@
             <input v-model="contact.name" placeholder="Full name" type="text">
             <input v-model.email="contact.email" placeholder="Email address" type="email">
             <input v-model.phone="contact.phone" placeholder="Phone number" type="text">
-            <button>Save</button>
+            <button class="btn-primary">Save</button>
         </div>
         <div class="glow"></div>
         <!-- <img src="../../public/—Pngtree—realistic bitcoin coin logo 3d_6168535.png" /> -->
@@ -98,5 +98,10 @@ $clr3: #ea603f;
         padding: .5em;
         // cursor: text;
         color: whitesmoke;
+        width: fit-content;
+    }
+
+    button {
+        width: fit-content;
     }
 }</style>

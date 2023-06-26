@@ -63,6 +63,10 @@ a {
   @include logo;
 }
 
+.btn-primary {
+  @include btn-primary;
+}
+
 // @media screen and (min-width: $mobile-breakpoint) {
 // 	:root {
 // 		--options-size: 22px;

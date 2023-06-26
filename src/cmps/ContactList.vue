@@ -57,20 +57,6 @@ export default {
     --card-color: rgba(23, 23, 23);
 }
 
-.btn-primary {
-    display: flex;
-    align-content: center;
-    all: unset;
-    cursor: pointer;
-    width: fit-content;
-    background: #1D976C;
-    transition: 0.5s;
-    padding-inline: .5em;
-    padding-block: .2em;
-    border-radius: 10px;
-    color: black;
-}
-
 .close-btn {
     position: absolute;
     right: rem(10px);
@@ -79,7 +65,6 @@ export default {
 }
 
 .cards {
-    // width: calc(100% - 20px);
     row-gap: 1em;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(rem(320px), 1fr));
@@ -105,7 +90,6 @@ export default {
     position: relative;
 
     .card-content {
-        // background-color: var(--card-color);
         border-radius: inherit;
         margin: 1px;
         height: calc(100% - 2px);
@@ -114,7 +98,7 @@ export default {
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 1em;
         color: whitesmoke;
         border: 1px solid rgba($color: white, $alpha: 0.3);

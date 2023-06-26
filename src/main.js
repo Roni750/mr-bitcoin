@@ -14,8 +14,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faShieldHalved } from '@fortawesome/free-solid-svg-icons'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faInstagramSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-library.add(faGlobe, faShieldHalved, faComments, faLinkedin, faGithub, faInstagramSquare)
+library.add(faPhone, faGlobe, faShieldHalved, faComments, faLinkedin, faGithub, faInstagramSquare)
 
 const app = createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)

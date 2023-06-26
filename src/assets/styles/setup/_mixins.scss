@@ -17,7 +17,19 @@
     }
 }
 
-@mixin btn-primary() {}
+@mixin btn-primary() {
+    display: flex;
+    align-content: center;
+    all: unset;
+    cursor: pointer;
+    width: fit-content;
+    background: #1D976C;
+    transition: 0.5s;
+    padding-inline: .5em;
+    padding-block: .2em;
+    border-radius: 10px;
+    color: black;
+}
 
 @mixin logo() {
     grid-column: 1;

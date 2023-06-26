@@ -10,30 +10,6 @@ header {
     .logo {
         grid-column: 1;
         padding-inline-start: 1em;
-
-        span {
-            position: relative;
-
-            &::before {
-                content: '';
-                position: absolute;
-                background-color: rgb(216, 216, 216);
-                width: 5px;
-                height: 1px;
-                top: 2px;
-                left: -6px;
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                background-color: rgb(216, 216, 216);
-                width: 1px;
-                height: 5px;
-                top: 2px;
-                left: -6px;
-            }
-        }
     }
 
     .main-layout {
