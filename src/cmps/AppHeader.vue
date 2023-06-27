@@ -18,7 +18,7 @@
         </div>
         <div v-if="this.user" class="user-header-section flex row justify-center align-center gap-half">
             <span class="nav-txt">
-                Hello {{ this.user.username }}
+                {{ this.user.username }}
             </span>
             <!-- <span class="nav-txt" data-value="Contacts">
                 <RouterLink :to="`/user/${user._id}`">

@@ -7,11 +7,28 @@
                     Our platform reaches people all over the world, hereby we are trusted as the best platform for crypto
                     trading.</span>
             </div>
+
             <RouterLink to="/stats/marketpricehistory" class="btn-get-started">Learn more ►</RouterLink>
             <h3>Current <span>1 USD</span> rate to <span>BTC:</span> <span>{{ info.exchangeRate }}</span></h3>
-            <div v-if="info.user" class="user-balance">
-                <h4>Your current balance: {{ this.info.user.balance }} BTC</h4>
-                <h4>Current BTC balance in USD: ${{ addCommas(currBalanceInDollars) }}</h4>
+            <div v-if="info.user" class="user-wallet">
+                <ul class="user-balance clean-list">
+                    <li class="user-name">
+                        <h2>
+                            My wallet
+                        </h2>
+                    </li>
+                    <li>
+                        Welcome back {{ info.user.username }}!
+                    </li>
+                    <li>
+                        <h4>Your current balance: {{ this.info.user.balance }} BTC</h4>
+                    </li>
+                    <li>
+                        <h4>Current BTC balance in USD: ${{ addCommas(currBalanceInDollars) }}</h4>
+                    </li>
+                </ul>
+                <img src="../../public/logo.png" />
+                <img src="../../public/logo.png" />
             </div>
         </div>
         <img src="../assets/images/hero.png" />
