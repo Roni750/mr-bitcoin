@@ -9,6 +9,10 @@
             </div>
             <RouterLink to="/stats/marketpricehistory" class="btn-get-started">Learn more ►</RouterLink>
             <h3>Current <span>1 USD</span> rate to <span>BTC:</span> <span>{{ info.exchangeRate }}</span></h3>
+            <div v-if="info.user" class="user-balance">
+                <h4>Your current balance: {{ this.info.user.balance }} BTC</h4>
+                <h4>Current BTC balance in USD: ${{ addCommas(currBalanceInDollars) }}</h4>
+            </div>
         </div>
         <img src="../assets/images/hero.png" />
     </div>
@@ -36,6 +40,18 @@ export default {
             throw err
         }
     },
+    methods: {
+        addCommas(value) {
+            return value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    },
+    computed: {
+        currBalanceInDollars() {
+            const ratio = (1 / this.info.exchangeRate)
+            const res = (this.info.user.balance * ratio).toFixed(2)
+            return res
+        }
+    }
 }
 </script>
 

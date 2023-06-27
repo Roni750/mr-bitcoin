@@ -21,7 +21,8 @@ export default {
     },
     methods: {
         async onLogin() {
-            await userService.loginSignUp(this.username)
+            const user = await userService.loginSignUp(this.username)
+            this.$store.dispatch({ type: 'loadUser', userId: user._id })
             this.$router.push('/home')
         }
     }

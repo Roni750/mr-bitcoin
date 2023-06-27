@@ -39,13 +39,20 @@ import Logo from '../cmps/Logo.vue'
 import { userService } from '../services/user.service.js';
 
 export default {
+    computed: {
+        getUser() { return this.$store.getters.getUser }
+    },
     data() {
         return {
             user: null
         }
     },
-    created() {
+    async created() {
         this.user = userService.getLoggedinUser()
+        // const user = userService.getLoggedinUser()
+        // console.log("this.$store.getters", this.$store.getters)
+        // this.user = await this.$store.getters.getUser(user)
+        // console.log("this.user", this.user)
     },
     methods: {
         async onLogout() {

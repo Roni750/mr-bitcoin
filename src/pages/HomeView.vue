@@ -35,7 +35,6 @@ export default {
         try {
             this.info.exchangeRate = await bitcoinService.getRate()
             this.info.user = await userService.getLoggedinUser()
-            console.log("this.info.user", this.info.user)
         } catch (err) {
             throw err
         }

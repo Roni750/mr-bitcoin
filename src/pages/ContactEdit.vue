@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="save" v-if="contact" class="contact-details flex column gap-1">
+    <form @submit.prevent="save" v-if="contact" class="contact-details m-0 flex column gap-1">
         <div class="form-wrapper flex column gap-1">
             <input v-model="contact.name" class="contact-input" placeholder="Full name" type="text">
             <input v-model.email="contact.email" class="contact-input" placeholder="Email address" type="email">
@@ -49,17 +49,6 @@ export default {
 
 <style lang="scss">
 .contact-edit {
-    margin: 0 auto;
-    justify-content: center;
-    align-items: start;
-    background: rgba(61, 61, 61, 0.3);
-    border: 1px solid rgba(129, 129, 129, 0.3);
-    border-radius: 10px;
-    height: 200px;
-    width: 400px;
-    margin-inline: 0 auto;
-    position: relative;
-
     @keyframes animateGlow {
         0% {
             background-position: 0% 50%;

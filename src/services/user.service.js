@@ -7,6 +7,7 @@ const STORAGE_KEY_LOGGEDIN = 'loggedinUser'
 
 export const userService = {
     get,
+    query,
     save,
     getEmptyUser,
     loginSignUp,
@@ -35,6 +36,10 @@ async function logout() {
 
 function get(userId) {
     return storageService.get(STORAGE_KEY, userId)
+}
+
+async function query() {
+    return await storageService.query(STORAGE_KEY)
 }
 
 function save(user) {

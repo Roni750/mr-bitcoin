@@ -1,4 +1,5 @@
 import { contactService } from '@/services/contact.service.js'
+import { userService } from '@/services/user.service.js'
 
 export default {
     state() {
@@ -13,22 +14,21 @@ export default {
         removeContact(state, { contactId }) {
             const idx = state.contacts.findIndex(contact => contact._id === contactId)
             state.contacts.splice(idx, 1)
-        }
+        },
     },
     actions: {
-        async loadContacts({ commit }){
+        async loadContacts({ commit }) {
             const contacts = await contactService.query()
             commit({ type: 'setContacts', contacts })
         },
-        async removeContact({ commit }, { contactId }){
+        async removeContact({ commit }, { contactId }) {
             await contactService.remove(contactId)
             commit({ type: 'removeContact', contactId })
-        }
+        },
     },
     getters: {
         contacts(state) {
             return state.contacts
         },
-        getcontact: (state) => (contactId) => state.contacts.find(contact => contact.id === contactId)
     },
 }
